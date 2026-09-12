@@ -1,11 +1,13 @@
 # RİTİM-EL — Wearable ECG/PPG Biometric Authentication
 
-> **Status:** Active development. Firmware, signal pipeline and CNN-LSTM model complete; PCB v1 in layout.
+> **Status:** Working end-to-end breadboard prototype — acquisition, verification and
+> lock-screen control all functional. Custom PCB v1 is in layout.
 > Source code is not public at this stage — available on request.
 
 A wrist-worn device that authenticates a user from their own ECG waveform and keeps the
 session alive with continuous on-wrist monitoring. Built end to end: analog front end,
-custom 4-layer PCB, embedded firmware, a CNN-LSTM identity model, and OS login integration.
+a custom 4-layer PCB design, embedded firmware, a CNN-LSTM identity model, and OS login
+integration.
 
 Submitted as a **TÜBİTAK 2209-A** university student research project at Bartın University.
 
@@ -72,8 +74,8 @@ The yellow/green pair sits on opposite faces of the same wrist; the red electrod
 touched with the free hand only when a verification is due. This closes a lead across the
 torso while keeping everything except the momentary finger contact on one wrist.
 
-Measured result: clean signal with low baseline noise and reliable R-peak detection —
-verification works from this placement.
+Measured result on the breadboard prototype: clean signal, noise eliminated, reliable
+R-peak detection, and working verification from this placement.
 
 ---
 
@@ -144,9 +146,9 @@ of the same recording.
 
 ### Application layer
 
-Background service on the host. Lock screen driven by verification state, with the desktop
-preserved underneath rather than a kiosk-mode shell replacement. Windows is implemented;
-Linux and macOS are targeted.
+Background service on the host, shipped as a standalone executable. Lock screen driven by
+verification state, with the desktop preserved underneath rather than a kiosk-mode shell
+replacement. Windows is implemented and working; Linux and macOS are targeted.
 
 ---
 
@@ -179,10 +181,10 @@ wrist data is in progress.
 ## Roadmap
 
 - [x] Literature review and signal-preprocessing pipeline
-- [x] Signal acquisition validated on hardware
 - [x] ESP32 firmware, 250 Hz stable sampling
 - [x] CNN-LSTM training + transfer learning (PTB-XL → ECG-ID)
-- [x] OS lock-screen integration
+- [x] Windows application and lock-screen integration
+- [x] **Breadboard prototype working end to end** — acquisition → verification → lock/unlock
 - [x] Schematic v1
 - [ ] PCB v1 layout and fabrication
 - [ ] BLE link and real-time streaming on the custom board
@@ -197,7 +199,7 @@ wrist data is in progress.
 Two-person TÜBİTAK 2209-A research project at Bartın University, advised by
 Asst. Prof. Onur Çakırgöz.
 
-- **Tolga Karateke** — hardware: analog front end, PCB design, firmware, BLE link, system integration
+- **Tolga Karateke** — hardware: analog front end, PCB design, firmware, system integration
 - **Hüseyin Konak** — verification software, OS integration, test and performance evaluation
 
 ---
