@@ -154,6 +154,17 @@ replacement. Windows is implemented and working; Linux and macOS are targeted.
 
 ---
 
+## User Interface
+
+The desktop application provides real-time visibility into the verification process. It handles BLE pairing, displays the live ECG stream for signal quality and electrode placement checks, and manages the OS lock-screen state based on the continuous authentication model.
+
+<p align="center">
+  <img src="interface.jpeg" alt="RİTİM-EL Host Application" width="48%">
+  <img src="interface-waveform.png" alt="RİTİM-EL Live Waveform" width="48%">
+</p>
+
+---
+
 ## Data handling
 
 No biometric data leaves the user's machine.
